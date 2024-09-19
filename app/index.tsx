@@ -1,40 +1,67 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { Image, Pressable, Text, View } from 'react-native';
+import { View, Text, Image, StyleSheet, Pressable, Platform } from 'react-native'
+import { colors } from '../constants/colors'
+import { Link } from 'expo-router'
 
-import {
-  useFonts,
-  Poppins_400Regular,
-  Poppins_500Medium,
-  Poppins_600SemiBold,
-} from '@expo-google-fonts/poppins'
-
-export default function Index() {
-
-  const [fontsLoaded] = useFonts({
-    Poppins_400Regular,
-    Poppins_500Medium,
-    Poppins_600SemiBold,
-  })
-
-  return (
-    <View className='bg-background h-full w-full flex flex-col items-center'>
+export default function Index(){
+  return(
+    <View style={styles.container}>
       <Image
         source={require('../assets/images/logo.png')}
-        className='mt-[138px]'
       />
 
-      <Text className='text-green font-bold text-5xl mt-2'>
+      <Text style={styles.title}>
         DietAI
       </Text>
-      <Text className='text-white w-[240px] text-center mt-1'>
-        Sua dieta personalizada
-        com inteligência artificial! 
+
+      <Text style={styles.text}>
+        Sua dieta personalizada com inteligência artificial
       </Text>
 
-      <Pressable className='bg-blue mt-4 rounded-md'>
-        <Text className='text-white py-3 px-32'>Gerar dieta</Text>
-      </Pressable>
+      <Link href="/step" asChild>
+        <Pressable style={styles.button}>
+          <Text style={styles.buttonText}>Gerar dieta</Text>
+        </Pressable>
+      </Link>
+
     </View>
   )
 }
+
+
+const styles = StyleSheet.create({
+  container:{
+    backgroundColor: colors.background,
+    flex:1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingLeft: 16,
+    paddingRight: 16,
+  },
+  title:{
+    fontSize: 36,
+    fontWeight: 'bold',
+    color: colors.greenlime
+  },
+  text:{
+    fontSize: 16, 
+    color: colors.white,
+    width: 240,
+    textAlign: 'center',
+    marginTop: 8,
+    marginBottom: 8,
+  },
+  button:{
+    backgroundColor: colors.lightblue,
+    width: '100%',
+    height: 40,
+    borderRadius: 4,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 34,
+  },
+  buttonText:{
+    color: colors.white,
+    fontSize: 16,
+    fontWeight: 'bold'
+  }
+})
