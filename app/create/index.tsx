@@ -11,8 +11,8 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from  'react-hook-form'
 import { colors } from '@/constants/colors'
 import { Header } from '@/components/header'
-import { Select } from '@/components/input/select'
-import { useDataStore } from '@/store/data'
+import { Select } from '../../components/input/select'
+import { useDataStore } from '../../store/data'
 import { router } from 'expo-router'
 
 const schema = z.object({

@@ -1,10 +1,10 @@
 import { View, Text, StyleSheet, Pressable, ScrollView, Share } from 'react-native';
 
-import { useDataStore } from '@/store/data'
-import { api } from '@/services/api'
+import { useDataStore } from '../../store/data'
+import { api } from '../../services/api'
 import { useQuery } from '@tanstack/react-query'
 import { colors } from '@/constants/colors'
-import { Data } from '@/types/data'
+import { Data } from '../../types/data'
 import { Link, router } from 'expo-router'
 import { Ionicons, Feather } from '@expo/vector-icons'
 
