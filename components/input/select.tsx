@@ -7,7 +7,7 @@ import {
   Modal,
 } from 'react-native';
 import { Controller } from 'react-hook-form'
-import { colors } from '../../constants/colors'
+import { colors } from '@/constants/colors'
 import { Feather} from '@expo/vector-icons'
 import { useState } from 'react'
 

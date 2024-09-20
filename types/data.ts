@@ -14,3 +14,4 @@ export interface Data {
   refeicoes: RefeicoesProps[];
   suplementos: string[];
 }
+

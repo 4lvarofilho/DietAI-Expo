@@ -1,5 +1,5 @@
-import { View, Text, Image, StyleSheet, Pressable, Platform } from 'react-native'
-import { colors } from '../constants/colors'
+import { View, Text, Image, StyleSheet, Pressable } from 'react-native'
+import { colors } from '@/constants/colors'
 import { Link } from 'expo-router'
 
 export default function Index(){
@@ -10,7 +10,7 @@ export default function Index(){
       />
 
       <Text style={styles.title}>
-        DietAI
+        Dieta<Text style={{ color: colors.white }}>.AI</Text>
       </Text>
 
       <Text style={styles.text}>
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
   title:{
     fontSize: 36,
     fontWeight: 'bold',
-    color: colors.greenlime
+    color: colors.green
   },
   text:{
     fontSize: 16, 
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   button:{
-    backgroundColor: colors.lightblue,
+    backgroundColor: colors.blue,
     width: '100%',
     height: 40,
     borderRadius: 4,

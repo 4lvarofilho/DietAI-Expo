@@ -20,8 +20,9 @@ export default function Nutrition() {
     queryFn: async () => {
       try{
         if(!user){
-          throw new Error("Failed on loading nutrition")
+          throw new Error("Filed load nutrition")
         }
+
         
         const response = await api.post<ResponseData>("/create", {
           name: user.name,
@@ -30,12 +31,14 @@ export default function Nutrition() {
           height:  user.height,
           weight: user.weight,
           objective: user.objective,
-          level: user.level,
-          comorbidity: user.comorbidity
+          level: user.level
         })
+
         return response.data.data
+
+
       }catch(err){
-        console.error(err);
+        console.log(err);
       }
     }
   })
@@ -45,7 +48,7 @@ export default function Nutrition() {
     try{
       if(data && Object.keys(data).length === 0) return;
 
-      const supplements = `${data?.suplementos.map(item => `${item}`)}`
+      const supplements = `${data?.suplementos.map( item => ` ${item}`)}`
 
       const foods = `${data?.refeicoes.map( item => `\n- Nome: ${item.nome}\n- Horário: ${item.horario}\n- Alimentos: ${item.alimentos.map( alimento => ` ${alimento}` )}`)}`
 
@@ -184,11 +187,11 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   },
   buttonShare:{
-    backgroundColor: colors.lightblue,
+    backgroundColor: colors.blue,
     alignItems: 'center',
     justifyContent: 'center',
     padding: 8,
-    borderRadius: 8
+    borderRadius: 4
   },
   buttonShareText:{
     color: colors.white,
@@ -219,7 +222,7 @@ const styles = StyleSheet.create({
   food:{
     backgroundColor: 'rgba(208, 208, 208, 0.40)',
     padding: 8,
-    borderRadius: 8,
+    borderRadius: 4,
   },
   foodHeader:{
     flexDirection: 'row',
@@ -249,7 +252,7 @@ const styles = StyleSheet.create({
     borderRadius: 8
   },
   button:{
-    backgroundColor: colors.lightblue,
+    backgroundColor: colors.blue,
     height: 40,
     justifyContent: 'center',
     alignItems: 'center',

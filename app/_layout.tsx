@@ -7,30 +7,30 @@ export default function RootLayout() {
   return (
     <QueryClientProvider client={queryClient}>
       <Stack>
-        <Stack.Screen
-          name="index"
+        <Stack.Screen 
+          name="index" 
           options={{
-            headerShown: false,
+            headerShown: false
           }}
         />
-        <Stack.Screen
-          name="step/index"
+        <Stack.Screen 
+          name="step/index" 
           options={{
-            headerShown: false,
+            headerShown: false
           }}
         />
-        <Stack.Screen
-          name="create/index"
+        <Stack.Screen 
+          name="create/index" 
           options={{
-            headerShown: false,
+            headerShown: false
           }}
-        />
-        <Stack.Screen
-          name="nutrition/index"
+        />      
+        <Stack.Screen 
+          name="nutrition/index" 
           options={{
-            headerShown: false,
+            headerShown: false
           }}
-        />
+        />      
       </Stack>
     </QueryClientProvider>
   );

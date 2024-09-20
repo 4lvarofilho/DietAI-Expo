@@ -9,7 +9,7 @@ import {
 } from "react-native";
 
 import { Feather } from '@expo/vector-icons'
-import { colors } from '../../constants/colors'
+import { colors } from '@/constants/colors'
 import { router } from 'expo-router'
 
 interface HeaderProps{

@@ -9,18 +9,16 @@ import {
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from  'react-hook-form'
-import { colors } from '../../constants/colors'
+import { colors } from '@/constants/colors'
 import { Header } from '@/components/header'
-import { Select } from '../../components/input/select'
-import { useDataStore } from '../../store/data'
+import { Select } from '@/components/input/select'
+import { useDataStore } from '@/store/data'
 import { router } from 'expo-router'
-import Input from '@/components/input'
 
 const schema = z.object({
   gender: z.string().min(1, { message: "O sexo é obrigatório"}),
   objective: z.string().min(1, { message: "O Objetivo é obrigatório"}),
   level: z.string().min(1, { message: "Selecione seu level"}),
-  comorbidity: z.string().min(1, { message: "Informe uma comorbidade ou digite 'Nenhuma'"})
 })
 
 type FormData = z.infer<typeof schema>
@@ -98,15 +96,6 @@ export default function Create() {
         options={objectiveOptions}
       />  
 
-      <Text style={styles.label}>Informe sua comorbidade (se houver)</Text>
-      <Input
-        control={control}
-        name="comorbidity"
-        placeholder='Ex: Diabetes (Digite "Nenhuma" se não houver)'
-        error={errors.comorbidity?.message}
-        keyboardType='default'
-      />
-
       <Pressable 
         style={styles.button} 
         onPress={handleSubmit(handleCreate)}
@@ -136,12 +125,11 @@ const styles = StyleSheet.create({
     paddingRight: 16,
    },
    button:{
-    backgroundColor: colors.lightblue,
-    marginTop: 16,
+    backgroundColor: colors.blue,
     height: 44,
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 8,
+    borderRadius: 4,
   },
   buttonText:{
     color: colors.white,
